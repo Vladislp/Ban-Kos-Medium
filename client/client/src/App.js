@@ -7,7 +7,8 @@ import './App.css';
 import Navbar from './components/navbar/navbar';
 import RegisterPage from '../src/components/auth/register';
 import Login from '../src/components/auth/login';
-
+import Welcome from '../src/pages/Home';
+import WelcomeLog from '../src/pages/Home-Login';
 
 function App() {
   
@@ -18,6 +19,8 @@ function App() {
         <Routes>
           <Route path='/register' element={<RegisterPage/>} />
           <Route path='/login' element={<Login />} />
+          <Route path='/welcomelog' element={<WelcomeLog />} />
+          <Route exact path="/" element={<Welcome />} />
         </Routes>
       </div>
     </Router>
