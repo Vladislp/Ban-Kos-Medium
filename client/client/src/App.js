@@ -9,11 +9,13 @@ import RegisterPage from '../src/components/auth/register';
 import Login from '../src/components/auth/login';
 import Welcome from '../src/pages/Home';
 import WelcomeLog from '../src/pages/Home-Login';
+import { AuthProvider } from './components/auth/authcontext';
 
 function App() {
   
   return (
-    <Router>
+    <AuthProvider>
+      <Router>
       <div className='App'>
         <Navbar /> 
         <Routes>
@@ -24,6 +26,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </AuthProvider>
   );
 }
 

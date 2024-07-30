@@ -8,12 +8,14 @@ import {
   MDBIcon
 } from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../auth/authcontext'; // Import useAuth
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,8 +29,8 @@ function Login() {
 
       setMessage(response.data.message);
 
-      // Store the token in local storage
-      localStorage.setItem('token', response.data.token);
+      // Store the token and update auth context
+      login(response.data.token);
       alert("Login successful");
 
       // Redirect to the welcome page after successful login
