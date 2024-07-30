@@ -72,11 +72,6 @@ function Register() {
                   <MDBIcon fas icon="key me-3" size='lg'/>
                   <MDBInput label='Repeat your password' id='form4' type='password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                 </div>
-
-                <div className='mb-4'>
-                  <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Subscribe to our newsletter' />
-                </div>
-
                 <MDBBtn className='mb-4' size='lg' type='submit'>Register</MDBBtn>
               </form>
             </MDBCol>
