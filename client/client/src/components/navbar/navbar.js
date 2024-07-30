@@ -10,9 +10,15 @@ import {
   MDBNavbarLink,
   MDBCollapse,
 } from 'mdb-react-ui-kit';
+import { useAuth } from '../auth/authcontext'; // Import your auth context
 
-export default function App() {
+export default function Navbar() {
   const [openBasic, setOpenBasic] = useState(false);
+  const { isAuthenticated, logout } = useAuth(); // Access auth state and functions
+
+  const handleLogout = () => {
+    logout(); // Call the logout function from the context
+  };
 
   return (
     <MDBNavbar expand='lg' light bgColor='light'>
@@ -30,17 +36,28 @@ export default function App() {
 
         <MDBCollapse navbar open={openBasic}>
           <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
+            {/* Always show Home link */}
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='/'>
-                Home
-              </MDBNavbarLink>
+              <MDBNavbarLink href={isAuthenticated ? '/welcomelog' : '/'}>Home</MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink href='/register'>Register</MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink href='/login'>Login</MDBNavbarLink>
-            </MDBNavbarItem>
+            {!isAuthenticated ? (
+              <>
+                {/* Show Register and Login links if not authenticated */}
+                <MDBNavbarItem>
+                  <MDBNavbarLink href='/register'>Register</MDBNavbarLink>
+                </MDBNavbarItem>
+                <MDBNavbarItem>
+                  <MDBNavbarLink href='/login'>Login</MDBNavbarLink>
+                </MDBNavbarItem>
+              </>
+            ) : (
+              <>
+                {/* Show Logout link if authenticated */}
+                <MDBNavbarItem>
+                  <MDBNavbarLink href='#' onClick={handleLogout}>Logout</MDBNavbarLink>
+                </MDBNavbarItem>
+              </>
+            )}
           </MDBNavbarNav>   
         </MDBCollapse>
       </MDBContainer>
