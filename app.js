@@ -2,11 +2,14 @@ const express = require('express');
 const mongoose = require('./config/db');
 const app = express();
 const usersRouter = require('./routes/route');
+const cors = require('cors');
 
 const port = 3000;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+
+app.use(cors());
 
 //Middleware for logging requests
 app.use((req, res, next) => {
@@ -15,6 +18,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/users', usersRouter);
+app.use('/register', usersRouter);
 
 app.get('/', (req, res) => {
     res.send("Hello world");
