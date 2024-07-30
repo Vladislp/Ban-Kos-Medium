@@ -15,9 +15,6 @@ This project is a simple authentication system built with React, using `mdb-reac
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
