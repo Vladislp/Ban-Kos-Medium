@@ -19,6 +19,7 @@ app.use((req, res, next) => {
 
 app.use('/users', usersRouter);
 app.use('/register', usersRouter);
+app.use('/login', usersRouter);
 
 app.get('/', (req, res) => {
     res.send("Hello world");
