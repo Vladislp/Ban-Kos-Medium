@@ -4,8 +4,9 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import logo from './logo.svg';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/navbar/navbar'
-import RegisterPage from '../src/components/auth/register'
+import Navbar from './components/navbar/navbar';
+import RegisterPage from '../src/components/auth/register';
+import Login from '../src/components/auth/login';
 
 
 function App() {
@@ -13,9 +14,10 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <Navbar />
+        <Navbar /> 
         <Routes>
-          <Route path='/register' component={RegisterPage} />
+          <Route path='/register' element={<RegisterPage/>} />
+          <Route path='/login' element={<Login />} />
         </Routes>
       </div>
     </Router>

@@ -7,7 +7,11 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   age: Number,
-  hobbies: [String]
+  hobbies: [String],
+  password: {
+    type: String,
+    required: true,
+  }
 });
 
 // Create and export the model
