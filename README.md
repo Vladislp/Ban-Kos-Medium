@@ -124,7 +124,7 @@ MONGODB_URI=mongodb://<username>:<password>@<cluster-url>/<database>?retryWrites
 
 Click the "Logout" button on the Welcome page to clear the authentication token and return to the login page.
 
-## How it looks in practice :star: :star:
+## How it looks in practice
 
 ### Front-End React Application
 1) We launch Front-End React application. I go to my project folder, currently using "Git Bash" on my pc and make sure i am in: "/Ban-Kos-Medium/client/client".
