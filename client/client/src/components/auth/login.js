@@ -5,10 +5,9 @@ import {
   MDBInput,
   MDBCheckbox,
   MDBBtn,
-  MDBIcon
 } from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../auth/authcontext'; // Import useAuth
+import { useAuth } from '../auth/authcontext';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -38,6 +37,7 @@ function Login() {
 
       console.log('Login successful, token received:', response.data.token);
     } catch (error) {
+      alert("Login unsuccessful")
       console.error('Login error:', error.response ? error.response.data : error);
       setMessage(error.response ? error.response.data.message : 'An error occurred');
     }
