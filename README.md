@@ -190,6 +190,8 @@ Again, as we can see we are using regular password and it works.
 ### Protected routes
 1) First, we can see that we are not login, so when we try to access "/protected" route...we go back to login.
 ![image](https://github.com/user-attachments/assets/6ded278f-7722-4b50-8870-f0fb15e9cea5)
+![image](https://github.com/user-attachments/assets/a9c9c25b-35ea-4b6c-b1f5-2ecaa5352eec)
+
 2) We are inside the system and we can see our protected route
 ![image](https://github.com/user-attachments/assets/2c6580c1-a17a-4bf3-9344-784c2ef653e5)
 ![image](https://github.com/user-attachments/assets/37b08f3b-3b8c-4b91-85a4-1680e1c4efb2)
