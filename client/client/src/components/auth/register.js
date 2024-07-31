@@ -18,6 +18,7 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,9 +39,15 @@ function Register() {
         body: JSON.stringify(user)
       });
       const data = await response.json();
-      console.log(data);
+
+      if (response.ok) {
+        setMessage("Registration successful!");
+      } else {
+        setMessage(data.message || "Registration failed");
+      }
     } catch (error) {
       console.error('Error:', error);
+      setMessage("Registration failed");
     }
   };
 
@@ -51,6 +58,12 @@ function Register() {
           <MDBRow>
             <MDBCol md='10' lg='6' className='order-2 order-lg-1 d-flex flex-column align-items-center'>
               <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+              {message && (
+                <div className="alert alert-info" role="alert">
+                  {message}
+                </div>
+              )}
 
               <form onSubmit={handleSubmit}>
                 <div className="d-flex flex-row align-items-center mb-4">

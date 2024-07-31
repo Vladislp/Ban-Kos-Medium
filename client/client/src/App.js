@@ -10,6 +10,7 @@ import Login from '../src/components/auth/login';
 import Welcome from '../src/pages/Home';
 import WelcomeLog from '../src/pages/Home-Login';
 import { AuthProvider } from './components/auth/authcontext';
+import Protected from './pages/Home-Protected';
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
           <Route path='/register' element={<RegisterPage/>} />
           <Route path='/login' element={<Login />} />
           <Route path='/welcomelog' element={<WelcomeLog />} />
+          <Route path='/protected' element={<Protected />} />
           <Route exact path="/" element={<Welcome />} />
         </Routes>
       </div>
