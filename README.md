@@ -15,6 +15,7 @@ This project is a simple authentication system built with React, using `mdb-reac
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
+- [How it looks in practice](#how-it-looks-in-practice)
 
 ## Features
 
@@ -122,3 +123,61 @@ MONGODB_URI=mongodb://<username>:<password>@<cluster-url>/<database>?retryWrites
 ### Logout
 
 Click the "Logout" button on the Welcome page to clear the authentication token and return to the login page.
+
+## How it looks in practice :star: :star:
+
+### Front-End React Application
+1) We launch Front-End React application. I go to my project folder, currently using "Git Bash" on my pc and make sure i am in: "/Ban-Kos-Medium/client/client".
+Should look something like this
+![image](https://github.com/user-attachments/assets/7644b8ff-fd2c-4b8c-93f0-03a0712c388d)
+2) Next, we simply type: "npm start". You should see similar to this screen.
+![image](https://github.com/user-attachments/assets/a61242fd-c8b9-4856-b3f8-31f979a0b063)
+2.1) Go to your browser and type in searchbar: http://localhost:3006/. This should be the result
+![image](https://github.com/user-attachments/assets/91f2d50e-7fae-4446-baa2-c67429ab9a90)
+
+### Back-End Node.js/Express.js/MongoDB application
+1) We launch Back-End Node.js/Express.js application. I go to my project folder in new "Git Bash" terminal and make sure i have this location: "/Ban-Kos-Medium". You should see similar to this...
+NB! You should see 'app.js' file in folder
+![image](https://github.com/user-attachments/assets/cfefe538-5c18-4dda-83c4-3c6c519d4618)
+2) Next, type "node app.js"...you should see similar picture
+![image](https://github.com/user-attachments/assets/e704b142-2a2f-462d-bda9-2e4688c084e3)
+3) Congratulation, Back-End works properly.
+
+### MongoDB
+As for MongoDB, explained in - [Set up environment variables](#set-up-environment-variables) section .env file is crucial with MongoDB Atlas connection.
+For security reasons, it is not allowed to public push sensitive information to the internet. (Crawlers are everywhere)
+If my .env, which consistes "connection string" with MongoDB required, i can provide it.
+But now, i can show simple way to have connection.
+
+1) When cluster is ready, you should head to "Connect" section.
+![1](https://github.com/user-attachments/assets/785b0f55-9c80-4559-a6e6-6357b71b4dfc)
+2) Choose "Drivers"
+![2](https://github.com/user-attachments/assets/98b60839-231a-434c-9d1c-26c2d437bfbd)
+3) Under "Add your connection string into your application code" you will see you'r connection string to your MongoDB.
+![3](https://github.com/user-attachments/assets/b769f46d-01f6-4b29-bbe3-0f5acaa52393)
+4) Cloned project SHOULD NOT have .env file inside root folder. Create it and put inside your .env file.
+
+        MONGODB_URI="connection string"
+
+### Take it further
+1) This is how my date looks in MongoDB
+![image](https://github.com/user-attachments/assets/e49c1d08-3e88-4b13-aa69-580f5e579f87)
+2) While everything works, i can try to login with my POSTMAN...just to be sure.
+![image](https://github.com/user-attachments/assets/d42ab4a4-e8e4-48b8-a093-6e45d8ffca0c)
+![POSTMAN](https://github.com/user-attachments/assets/262ca776-f925-4305-ae40-96b4c83187d5)
+3) It seems everything works here, let's look at the browser
+![image](https://github.com/user-attachments/assets/3659a995-8566-4616-a54a-391741d71c7f)
+We can see, that no key is provided before login, let's see further...
+![image](https://github.com/user-attachments/assets/845b5f54-22a1-448a-a285-ca1826122a78)
+Login is successful and we have new JWT to work with.
+3.1) Right, we are in...but we also should have remove JWT, when client leaves our app.
+![image](https://github.com/user-attachments/assets/c816813b-152a-4d23-ae82-c83c4ee43f50)
+I know, that it might look that i have similar screenshot :D ... but after we logout JWT is gone.
+![image](https://github.com/user-attachments/assets/70392c53-6933-40c3-a7ad-1ef64646660b)
+
+
+
+
+
+
+
