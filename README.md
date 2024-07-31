@@ -170,6 +170,7 @@ But now, i can show simple way to have connection.
 We can see, that no key is provided before login, let's see further...
 ![image](https://github.com/user-attachments/assets/845b5f54-22a1-448a-a285-ca1826122a78)
 Login is successful and we have new JWT to work with.
+
 3.1) Right, we are in...but we also should have remove JWT, when client leaves our app.
 ![image](https://github.com/user-attachments/assets/c816813b-152a-4d23-ae82-c83c4ee43f50)
 I know, that it might look that i have similar screenshot :D ... but after we logout JWT is gone.
@@ -178,9 +179,12 @@ I know, that it might look that i have similar screenshot :D ... but after we lo
 ### Example of bcrypt
 1) Here we have client in our database, that we created.
 ![image](https://github.com/user-attachments/assets/4af76a07-42a7-40de-ab9f-f7f94210edc3)
+
 As we can see, our client has hashed password.
-2) Let's try to login, using his password
+
+3) Let's try to login, using his password
 ![image](https://github.com/user-attachments/assets/3e2f9fe6-c4e4-49cc-9d70-4122ae1ac21e)
+
 Again, as we can see we are using regular password and it works.
 
 
