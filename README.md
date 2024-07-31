@@ -175,6 +175,13 @@ Login is successful and we have new JWT to work with.
 I know, that it might look that i have similar screenshot :D ... but after we logout JWT is gone.
 ![image](https://github.com/user-attachments/assets/70392c53-6933-40c3-a7ad-1ef64646660b)
 
+### Example of bcrypt
+1) Here we have client in our database, that we created.
+![image](https://github.com/user-attachments/assets/4af76a07-42a7-40de-ab9f-f7f94210edc3)
+As we can see, our client has hashed password.
+2) Let's try to login, using his password
+![image](https://github.com/user-attachments/assets/3e2f9fe6-c4e4-49cc-9d70-4122ae1ac21e)
+Again, as we can see we are using regular password and it works.
 
 
 
