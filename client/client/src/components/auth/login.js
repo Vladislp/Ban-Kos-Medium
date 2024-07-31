@@ -9,7 +9,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/authcontext';
 
-function Login() {
+function Login({ updateStatus }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -32,12 +32,15 @@ function Login() {
       login(response.data.token);
       alert("Login successful");
 
-      // Redirect to the welcome page after successful login
-      navigate('/welcomelog');
+      // Update the login status in the parent component
+      updateStatus();
+
+      // Redirect to the protected page after successful login
+      navigate('/protected');
 
       console.log('Login successful, token received:', response.data.token);
     } catch (error) {
-      alert("Login unsuccessful")
+      alert("Login unsuccessful");
       console.error('Login error:', error.response ? error.response.data : error);
       setMessage(error.response ? error.response.data.message : 'An error occurred');
     }

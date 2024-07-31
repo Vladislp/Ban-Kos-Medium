@@ -12,6 +12,10 @@ function WelcomeLog() {
     navigate('/login'); // Redirect to login page after logout
   };
 
+  const handleNavigateToProtected = () => {
+    navigate('/protected');
+  };
+
   return (
     <MDBContainer className="p-3 my-5 d-flex flex-column align-items-center w-75">
       <MDBTypography tag='h1' className="mb-4">Welcome Back!</MDBTypography>
@@ -19,10 +23,12 @@ function WelcomeLog() {
         You are in the system
       </MDBTypography>
 
-      <div className="d-flex flex-column align-items-center mt-4">
-        <MDBBtn color="primary" className="mb-2">
-          Go to Profile
+      <div className="d-flex  align-items-center mt-4">
+        
+        <MDBBtn color="danger" onClick={handleNavigateToProtected}>
+          Protected route
         </MDBBtn>
+
         <MDBBtn color="danger" onClick={handleLogout}>
           Logout
         </MDBBtn>
